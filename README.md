@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Codebiosys/django-auditing.svg?token=QV3wJRfpprDN5XdYRpuT&branch=master)](https://travis-ci.com/Codebiosys/django-auditing)
+
 # Django Auditing
 
 Auditing is a simple Django app to enable database-level audit tracking. It
