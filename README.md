@@ -17,18 +17,21 @@ triggers that performs audit record diff inserts into a central
 
 ## Quick start
 
-1. Add "audit" to your INSTALLED_APPS setting like this::
+1. Add "audit" to your INSTALLED_APPS setting like this:
 
+    ```python
     INSTALLED_APPS = [
         ...
         'auditing',
     ]
+    ```
 
 1. Run `python manage.py migrate` to create the polls models.
 
 
-1. In your migrations::
+1. In your migrations:
 
+    ```python
     from auditing.migrating import AddAuditToModel
     ...
 
@@ -38,7 +41,8 @@ triggers that performs audit record diff inserts into a central
           ...
           AddAuditToModel(name='MyModel', app_label="myapp')
         ]
-
+    ```
+    
 
 ## Considerations
 
