@@ -1,0 +1,12 @@
+# Global Config
+language: python
+sudo: required
+
+services:
+  - docker
+
+# Testing Config
+
+script:
+  - docker-compose run --rm develop flake8
+  - docker-compose run --rm develop pytest -vv

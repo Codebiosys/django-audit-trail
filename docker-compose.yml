@@ -1,0 +1,30 @@
+#
+# Docker Compose settings for development
+#
+version: "3"
+
+services:
+
+  develop:
+    build:
+      context: .
+      dockerfile: Dockerfile-develop
+    environment:
+      - DB_DIALECT=postgresql
+      - DB_HOST=postgresql
+      - DB_PORT=5432
+      - DB_DATABASE=postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+    depends_on:
+      - postgresql
+    volumes:
+      - .:/app
+
+  postgresql:
+    build:
+      context: .
+      dockerfile: Dockerfile-postgresql
+    expose:
+      - "5432"
+    tmpfs: /var/lib/postgresql/data
