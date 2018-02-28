@@ -10,8 +10,8 @@ def test__str__(client):
 
     """
     import datetime
-    from auditing import models
-    record = models.AuditLog(
+    from audit_trail import models
+    record = models.Log(
         id=1,
         schema_name='public',
         table_name='recipes',

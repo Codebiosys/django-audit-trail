@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.postgres import fields as postgres
 
 
-class AuditLog(models.Model):
+class Log(models.Model):
     """ Audit logging table.
 
     This table is reflected from the existing audit log

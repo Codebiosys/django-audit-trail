@@ -5,26 +5,26 @@ version: "3"
 
 services:
 
-  develop:
+  app:
     build:
       context: .
-      dockerfile: Dockerfile-develop
+      dockerfile: Dockerfile-app
     environment:
       - DB_DIALECT=postgresql
-      - DB_HOST=postgresql
+      - DB_HOST=db
       - DB_PORT=5432
       - DB_DATABASE=postgres
       - DB_USERNAME=postgres
       - DB_PASSWORD=postgres
     depends_on:
-      - postgresql
+      - db
     volumes:
       - .:/app
 
-  postgresql:
+  db:
     build:
       context: .
-      dockerfile: Dockerfile-postgresql
+      dockerfile: Dockerfile-db
     expose:
       - "5432"
     tmpfs: /var/lib/postgresql/data

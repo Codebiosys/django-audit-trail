@@ -14,21 +14,21 @@ class MockRequest(object):
 request = MockRequest()
 
 
-def test_AuditingAdmin_str(site):
-    from auditing.admin import AuditingAdmin
-    from auditing.models import AuditLog
-    admin = AuditingAdmin(AuditLog, site)
-    assert str(admin) == 'auditing.AuditingAdmin'
+def test_AuditTrailAdmin_str(site):
+    from audit_trail.admin import AuditTrailAdmin
+    from audit_trail.models import Log
+    admin = AuditTrailAdmin(Log, site)
+    assert str(admin) == 'audit_trail.AuditTrailAdmin'
 
 
-def test_AuditingAdmin_list_display(site):
+def test_AuditTrailAdmin_list_display(site):
     """ It should list record columns """
 
     import datetime
-    from auditing.admin import AuditingAdmin
-    from auditing.models import AuditLog
+    from audit_trail.admin import AuditTrailAdmin
+    from audit_trail.models import Log
 
-    log = AuditLog(
+    log = Log(
         id=1,
         schema_name='public',
         table_name='recipes',
@@ -48,7 +48,7 @@ def test_AuditingAdmin_list_display(site):
         changed_fields={},
         statement_only=False
     )
-    admin = AuditingAdmin(AuditLog, site)
+    admin = AuditTrailAdmin(Log, site)
 
     fields = list(admin.get_fields(request, log))
     assert fields == """

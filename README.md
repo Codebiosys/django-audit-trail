@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.com/Codebiosys/django-auditing.svg?token=QV3wJRfpprDN5XdYRpuT&branch=master)](https://travis-ci.com/Codebiosys/django-auditing)
 
-# Django Auditing
+# Django Audit Trail
 
-Auditing is a simple Django app to enable database-level audit tracking. It
+Audit Trail is a simple Django app to enable database-level audit tracking. It
 accomplishes this by exposing an API to use in migrations to install
 triggers that performs audit record diff inserts into a central
 `audit.log` table.
@@ -14,7 +14,6 @@ triggers that performs audit record diff inserts into a central
 * pg-audit-json extension install for postgres
 * Django 1.11+
 * Python 3.6+
-* A python postgres database driver like `psycopg2`
 
 
 ## Quick start
@@ -24,7 +23,7 @@ triggers that performs audit record diff inserts into a central
     ```python
     INSTALLED_APPS = [
         ...
-        'auditing',
+        'audit_trail',
     ]
     ```
 
@@ -33,8 +32,7 @@ triggers that performs audit record diff inserts into a central
 
 1. In your migrations:
 
-    ```python
-    from auditing.migrating import AddAuditToModel
+    from audit_trail.migrating import AddAuditToModel
     ...
 
     class Migration(migrations.Migration):
@@ -44,7 +42,7 @@ triggers that performs audit record diff inserts into a central
           AddAuditToModel(name='MyModel', app_label="myapp')
         ]
     ```
-    
+
 
 ## Considerations
 

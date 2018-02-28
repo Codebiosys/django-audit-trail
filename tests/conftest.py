@@ -39,7 +39,7 @@ def pytest_configure():
             'django.contrib.sessions',
             'django.contrib.sites',
             'django.contrib.staticfiles',
-            'auditing',
+            'audit_trail',
             'tests',
         ),
         PASSWORD_HASHERS=(

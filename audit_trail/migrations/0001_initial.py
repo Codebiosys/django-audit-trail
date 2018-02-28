@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='AuditLog',
+            name='Log',
             fields=[
                 ('id', models.BigIntegerField(primary_key=True, serialize=False)),
                 ('schema_name', models.TextField()),

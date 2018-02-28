@@ -8,14 +8,14 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-auditing',
+    name='django-audit-trail',
     version='0.1.0',
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',
     description='A Django app that audits record diffs on write',
     long_description=README,
-    url='https://github.com/Codebiosys/django-auditing',
+    url='https://github.com/Codebiosys/django-audit-trail',
     author='CodeBiosys, Inc',
     author_email='developers@codebiosys.com',
     classifiers=[
