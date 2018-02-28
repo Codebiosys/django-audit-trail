@@ -32,14 +32,18 @@ triggers that performs audit record diff inserts into a central
 
 1. In your migrations:
 
+    ```python
     from audit_trail.migrating import AddAuditToModel
     ...
 
     class Migration(migrations.Migration):
         ...
+        dependencies = [
+            ('audit_trail', '0001_initial'),   # Only add this in the first migration
+        ]
         operations = [
-          ...
-          AddAuditToModel(name='MyModel', app_label="myapp')
+            ...
+            AddAuditToModel(name='MyModel', app_label="myapp')
         ]
     ```
 
