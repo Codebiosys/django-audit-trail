@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/Codebiosys/django-auditing.svg?token=QV3wJRfpprDN5XdYRpuT&branch=master)](https://travis-ci.com/Codebiosys/django-auditing)
+[![Build Status](https://travis-ci.com/Codebiosys/django-audit-trail.svg?token=QV3wJRfpprDN5XdYRpuT&branch=master)](https://travis-ci.com/Codebiosys/django-audit-trail)
 
 # Django Audit Trail
 
