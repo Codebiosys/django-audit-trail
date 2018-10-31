@@ -47,6 +47,44 @@ triggers that performs audit record diff inserts into a central
         ]
     ```
 
+## Running tests
+
+It is highly encouraged you run the tests using the included docker stack.
+
+
+1. Clone the application:
+
+    ```
+    > git clone https://github.com/CodeBiosys/django-audit-trail
+    > cd django-audit-trail
+    ```
+
+1. Provision a new Docker machine called `django-audit-trail`:
+
+    ```
+    > docker-machine create -d virtualbox django-audit-trail
+    > eval $(docker-machine env django-audit-trail)
+    > docker-machine ls
+		NAME                      ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER        ERRORS
+		django-audit-trail        *        virtualbox   Running   tcp://192.168.99.100:2376           v18.06.1-ce
+    ```
+
+    **Note the asterisk in the "ACTIVE" column.**
+
+
+1. Build the application stack and start the services:
+
+    ```
+    > docker-compose build
+		> docker-compose up -d
+    ```
+
+1. Run the tests
+
+		```
+		docker-compose run --rm app py.test
+		```
+
 
 ## Considerations
 
