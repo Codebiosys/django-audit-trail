@@ -6,9 +6,7 @@ version: "3"
 services:
 
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile-app
+    build: .
     environment:
       - DB_DIALECT=postgresql
       - DB_HOST=db
@@ -22,9 +20,7 @@ services:
       - .:/app
 
   db:
-    build:
-      context: .
-      dockerfile: Dockerfile-db
+    build: https://github.com/m-martinez/pg-audit-json.git#1.0.2
     expose:
       - "5432"
     tmpfs: /var/lib/postgresql/data
