@@ -79,9 +79,6 @@ It is highly encouraged you run the tests using the included docker stack.
 		> docker-compose up -d
     ```
 
-    **Note that if you update your permissions YAML file, you need to re-run
-    rebuild_permissions**
-
 1. Run the tests
 
 		```
