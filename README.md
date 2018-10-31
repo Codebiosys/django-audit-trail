@@ -89,19 +89,6 @@ It is highly encouraged you run the tests using the included docker stack.
 		```
 
 
-### Development
-
-To run tests:
-
-    ```
-    # Client
-    > docker-compose run --rm client yarn run test
-
-    # API
-    > docker-compose run --rm api pytest
-    ```<Paste>
-
-
 ## Considerations
 
 When using this app, it is recommended you exclude tracking BLOB changes as these
